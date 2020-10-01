@@ -1,6 +1,8 @@
 theme: jekyll-theme-minimal
 title: Duy Nguyen
-description: Welcome to my personal blog
+description: Blog about the acquired knowledge through my study and researches
+paginate: 5
+paginate_path: "/page-:num/"
 
 contact:
   - name: Email
@@ -12,3 +14,6 @@ contact:
   - name: GitHub
     icon: "fab fa-github-square"
     value: https://github.com/duynguyen-ori75
+
+plugins:
+  - jekyll-paginate
