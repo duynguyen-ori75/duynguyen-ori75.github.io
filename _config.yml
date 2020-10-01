@@ -1,13 +1,14 @@
 theme: jekyll-theme-minimal
 title: Duy Nguyen
 description: Blog about the acquired knowledge through my study and researches
+logo: /assets/logo.jpg
 paginate: 5
 paginate_path: "/page-:num/"
 
 contact:
   - name: Email
     icon: "fas fa-at"
-    value: duynguyen.ori75@gmail.com
+    value: mailto:duynguyen.ori75@gmail.com
   - name: LinkedIn
     icon: "fab fa-linkedin"
     value: https://www.linkedin.com/in/duynguyen-ori75/

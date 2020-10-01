@@ -22,7 +22,7 @@
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
         {% if site.contact %}
-        <ul class="downloads">
+        <ul>
           {% for contact in site.contact %}
             <li>
               <a href="{{ contact.value }}">
