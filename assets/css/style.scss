@@ -3,6 +3,18 @@
 
 @import "{{ site.theme }}";
 
+.wrapper {
+  width: 90%;
+}
+
+.wrapper header {
+  width: 20%;
+}
+
+.wrapper section {
+  width: 70%;
+}
+
 header ul li {
   padding-top: 0.3em;
 }
