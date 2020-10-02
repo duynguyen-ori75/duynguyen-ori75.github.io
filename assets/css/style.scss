@@ -11,13 +11,24 @@
   width: 20%;
 }
 
+.wrapper header ul a {
+  font-size: 1em;
+  padding-top: 0.8em;
+}
+
+.wrapper img#site_logo {
+  max-width: 60%;
+  border-radius: 50%;
+}
+
 .wrapper section {
   width: 75%;
 }
 
-header ul a {
-  font-size: 1em;
-  padding-top: 0.8em;
+.wrapper section ul hr {
+  border: 2px solid #267CB9;
+  border-radius: 2px;
+  height: 0px;
 }
 
 .pagination a, .pagination span {
@@ -40,9 +51,4 @@ header ul a {
 
 .pagination {
   text-align: center;
-}
-
-img#site_logo {
-  max-width: 60%;
-  border-radius: 50%;
 }
