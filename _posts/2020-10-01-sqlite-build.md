@@ -1,9 +1,7 @@
 ---
-layout: default
-title: SQLite build notes
+layout: post
+title: Notes about compiling SQLite from source
 ---
-
-## Some notes about building SQLite
 
 All modification below is done on top of SQLite version 3.10.2
 
@@ -177,7 +175,3 @@ int main() {
   printf("rootPage's number of cells: %d\n", rootPage->nCell); // should be 2 (last pointer is not counted)
 }
 ```
-
-### SQLite btree structure
-
-Will be updated later
