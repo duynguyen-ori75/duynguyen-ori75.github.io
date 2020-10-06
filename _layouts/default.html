@@ -33,18 +33,15 @@
           {% endfor %}
         </ul>
         {% endif %}
+
+        <a href="{{site.url}}/about"><h3>About</h3></a>
+        <a href="{{site.url}}/list-posts"><h3>List of posts</h3></a>
       </header>
       <section>
 
       {{ content }}
 
       </section>
-      <footer>
-        {% if site.github.is_project_page %}
-        <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
-        {% endif %}
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
     </div>
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
     {% if site.google_analytics %}
