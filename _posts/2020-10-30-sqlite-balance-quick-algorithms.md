@@ -7,9 +7,12 @@ title: SQLite balance quick algorithm
 
 There are three balance algorithms implemented in the Btree module
 
-- Balance quick - `btree.c` - `static int balance_quick(MemPage *pParent, MemPage *pPage, u8 *pSpace)`
-- Balance deeper - `btree.c` - `static int balance_deeper(MemPage *pRoot, MemPage **ppChild)`
-- Balance non-root (aka balance siblings) - `btree.c` - `static int balance_nonroot(MemPage *pParent, int iParentIdx, u8 *aOvflSpace, int isRoot, int bBulk)`
+- Balance quick
+  - `btree.c` - `static int balance_quick(MemPage *pParent, MemPage *pPage, u8 *pSpace)`
+- Balance deeper
+  - `btree.c` - `static int balance_deeper(MemPage *pRoot, MemPage **ppChild)`
+- Balance non-root (aka balance siblings)
+  - `btree.c` - `static int balance_nonroot(MemPage *pParent, int iParentIdx, u8 *aOvflSpace, int isRoot, int bBulk)`
 
 These three algorithms will be invoked through `static int balance(BtCursor *pCur)`, which is simply a utility function to determine whether a page should be re-balanced, which balance algorithm should be used for that page, and whether that page's parent page should also be re-balanced.
 
@@ -19,7 +22,7 @@ This post will talk about the balance quick function
 
 ### General information
 
-The short description of the algorithm is written here: https://www.sqlite.org/btreemodule.html#section_4_2_5_3
+The short description of the algorithm is written here: [Balance quick algorithm](https://www.sqlite.org/btreemodule.html#section_4_2_5_3)
 
 This algorithm will be triggered if only the recent inserted cell is placed on the extreme right end of the
 tree, i.e. the largest entry in the tree.
