@@ -60,8 +60,6 @@ Inputs:
 
 - A new page will be allocated, which will become the right sibling of the current page
   - `allocateBtreePage(pBt, &pNew, &pgnoNew, 0, 0)`
-- Mark this new page as writeable
-  - `sqlite3PagerIswriteable(pNew->pDbPage)`
 - Initialize a CellArray to populate the overflow cell
 - Populate the new page with this CellArray
   - `rc = rebuildPage(&b, 0, 1, pNew)`
