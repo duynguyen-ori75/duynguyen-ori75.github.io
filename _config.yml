@@ -1,6 +1,6 @@
 theme: jekyll-theme-minimal
-title: Duy Nguyen
-description: Blog about the acquired knowledge through my study and researches
+title: Duy Nguyen's personal blog
+description: Random knowledge
 logo: /assets/logo.jpg
 paginate: 5
 paginate_path: "/page-:num/"
