@@ -39,7 +39,7 @@ The algorithm can be disabled at compile-time by enabling the option `SQLITE_OMI
 
 > gcc -DSQLITE_OMIT_QUICKBALANCE=0 application.c sqlite.c -lpthread -ldl -o output
 
-### Function declaration
+### Function specification
 
 `btree.c` - `static int balance_quick(MemPage *pParent, MemPage *pPage, u8 *pSpace)`
 

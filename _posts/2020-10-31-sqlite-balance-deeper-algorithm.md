@@ -13,7 +13,7 @@ This algorithm will be triggered if only the root page of the current Btree is o
 
 ![Alt Visualization](https://www.sqlite.org/images/btreemodule_balance_deeper.svg)
 
-### Function declaration
+### Function specification
 
 `btree.c` - `static int balance_deeper(MemPage *pRoot, MemPage **ppChild)`
 
