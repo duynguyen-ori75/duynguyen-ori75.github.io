@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SQLite balance siblings algorithm
+title: SQLite balance siblings algorithm - 1st part
 ---
 
 ## Balance siblings algorithm

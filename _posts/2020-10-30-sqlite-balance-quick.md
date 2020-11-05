@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SQLite Introduction to Balance algorithms & Balance quick algorithm
+title: SQLite Introduction to balance algorithms & balance quick algorithm
 ---
 
 ## Introduction
