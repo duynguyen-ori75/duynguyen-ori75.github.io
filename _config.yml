@@ -1,6 +1,6 @@
 theme: jekyll-theme-minimal
-title: Duy Nguyen's personal blog
-description: Random knowledge
+title: Duy Nguyen's blog
+description: Funny stuffs - mostly about SQLite, algorithms, data structures and distributed systems
 logo: /assets/logo.jpg
 paginate: 5
 paginate_path: "/page-:num/"
