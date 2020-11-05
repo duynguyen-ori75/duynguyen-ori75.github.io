@@ -13,8 +13,9 @@ This function ensures that the current page and its siblings will be neither ove
 
 ### Notes
 
-- I won't discuss bulk load here, so the `bBulk` parameter will always be 0 in this post
+- I won't discuss bulk load here, so any `bBulk` parameter will always be 0 in this post
 - Divider cells are cells containing pointer information to child pages (aka pageno)
+- Only `table` B-tree is considered in this post - I.E. `intKey` B-tree
 - From now on, when talking about `total number of cells in a page`, I am referring to the number of cells including overflow cells. If I am not, then I will refer to it clearly - such as `number of internal cells`
 
 ### Function specification
@@ -58,7 +59,27 @@ As this algorithm is extremely complex, I will divide it into several phases
 - `i+nxDiv-pParent->nOverflow` is the expected divider slot on the left of the current cell
 
 - Initialize all sibling pages (in descending order), and store them in `*apOld`
+  - `rc = getAndInitPage(pBt, pgno, &apOld[i], 0, 0);`
   - If current `pParent` is overflow, then current page - `iParentIdx` page - should be the only overflow cell. In this case, remove the overflow state and move the current cells and siblings to the workspace `apDiv`
     - `if( pParent->nOverflow && i+nxDiv==pParent->aiOvfl[0] ){ ... }`
   - Else, simply drop the current cells and siblings
     - `}else{ ... }`
+
+#### Determine an ordered list of cells to redistribute
+
+- Determine the maximum number of cells to redistribute - this should be a multiple of 4
+  - `nMaxCells = nOld*(MX_CELL(pBt) + ArraySize(pParent->apOvfl));`
+  - `nMaxCells = (nMaxCells + 3)&~3;`
+- Allocate memory for working space data structure - `CellArray b`. This will allocate enough memory space for `b.apCell`, `b.szCell` and `aSpace1`
+  - `szScratch = nMaxCells*sizeof(u8*) + nMaxCells*sizeof(u16) + pBt->pageSize;`
+  - `b.apCell = sqlite3StackAllocRaw(0, szScratch );`
+  - `aSpace1 = (u8*)&b.szCell[nMaxCells];`
+- Loop through all old pages and copy all cells (including divider cells with correct index) into `b.apCell` array
+  - `MemPage *pOld = apOld[i];`
+  - `memset(&b.szCell[b.nCell], 0, sizeof(b.szCell[0])*(limit+pOld->nOverflow));`
+  - `u8 *piCell = aData + pOld->cellOffset;`
+  - `while( piCell<piEnd ){ b.apCell[b.nCell] = aData + (maskPage & get2byteAligned(piCell)); ... }`
+- Don't need to worry about the `if( i<nOld-1 && !leafData){ ... }` condition, as we only consider the `intKey` B-tree
+- All cells should be already stored in `CellArray b`
+
+> TO BE CONTINUED...

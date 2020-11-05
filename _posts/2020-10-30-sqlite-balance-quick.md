@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SQLite balance quick algorithm
+title: SQLite Introduction to Balance algorithms & Balance quick algorithm
 ---
 
 ## Introduction
@@ -16,7 +16,7 @@ There are three balance algorithms implemented in the Btree module
 
 These three algorithms will be invoked through `static int balance(BtCursor *pCur)`, which is simply a utility function to determine whether a page should be re-balanced, which balance algorithm should be used for that page, and whether that page's parent page should also be re-balanced.
 
-This post will talk about the balance quick function
+If the workload is append-only, it is not worthy to spend time on Balance siblings algorithm
 
 ## Balance quick algorithm
 
