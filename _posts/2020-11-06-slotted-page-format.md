@@ -30,7 +30,7 @@ One problem with this mechanism is that, whenever a record is deleted, space pre
 
 ## Simple implementation
 
-Full implementation can be found here: https://github.com/duynguyen-ori75/playground/tree/master/blockds
+Full implementation can be found here: [Simple slotted page](https://github.com/duynguyen-ori75/playground/tree/master/blockds)
 
 ### Class definition
 
