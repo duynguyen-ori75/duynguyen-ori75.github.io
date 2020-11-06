@@ -16,7 +16,7 @@ This function ensures that the current page and its siblings will be neither ove
 - I won't discuss bulk load here, so any `bBulk` parameter will always be 0 in this post
 - Divider cells are cells containing pointer information to child pages (aka pageno)
 - Only `table` B-tree is considered in this post - I.E. `intKey` B-tree
-- From now on, when talking about `total number of cells in a page`, I am referring to the number of cells including overflow cells. If I am not, then I will refer to it clearly - such as `number of internal cells`
+- From now on, when talking about the `total number of cells in a page`, I am referring to the number of cells including overflow cells. If I am not, then I will refer to it clearly - such as `number of internal cells`
 
 ### Function specification
 
@@ -60,7 +60,7 @@ As this algorithm is extremely complex, I will divide it into several phases
 
 - Initialize all sibling pages (in descending order), and store them in `*apOld`
   - `rc = getAndInitPage(pBt, pgno, &apOld[i], 0, 0);`
-  - If current `pParent` is overflow, then current page - `iParentIdx` page - should be the only overflow cell. In this case, remove the overflow state and move the current cells and siblings to the workspace `apDiv`
+  - If the current `pParent` is overflow, the current page - `iParentIdx` page - should be the only overflow cell. In this case, remove the overflow state and move the current cells and siblings to the workspace `apDiv`
     - `if( pParent->nOverflow && i+nxDiv==pParent->aiOvfl[0] ){ ... }`
   - Else, simply drop the current cells and siblings
     - `}else{ ... }`
