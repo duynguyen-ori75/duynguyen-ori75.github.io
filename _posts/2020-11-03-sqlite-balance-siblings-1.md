@@ -70,16 +70,15 @@ As this algorithm is extremely complex, I will divide it into several phases
 - Determine the maximum number of cells to redistribute - this should be a multiple of 4
   - `nMaxCells = nOld*(MX_CELL(pBt) + ArraySize(pParent->apOvfl));`
   - `nMaxCells = (nMaxCells + 3)&~3;`
-- Allocate memory for working space data structure - `CellArray b`. This will allocate enough memory space for `b.apCell`, `b.szCell` and `aSpace1`
-  - `szScratch = nMaxCells*sizeof(u8*) + nMaxCells*sizeof(u16) + pBt->pageSize;`
-  - `b.apCell = sqlite3StackAllocRaw(0, szScratch );`
-  - `aSpace1 = (u8*)&b.szCell[nMaxCells];`
-- Loop through all old pages and copy all cells (including divider cells with correct index) into `b.apCell` array
-  - `MemPage *pOld = apOld[i];`
-  - `memset(&b.szCell[b.nCell], 0, sizeof(b.szCell[0])*(limit+pOld->nOverflow));`
-  - `u8 *piCell = aData + pOld->cellOffset;`
-  - `while( piCell<piEnd ){ b.apCell[b.nCell] = aData + (maskPage & get2byteAligned(piCell)); ... }`
+- Allocate memory for working space data structure - `szScratch`. This will allocate enough memory space for `pCell`, `szCell` and `aSpace1`
+  - `k = pBt->pageSize + ROUND8(sizeof(MemPage));`
+  - `szScratch = nMaxCells*sizeof(u8*) + nMaxCells*sizeof(u16) + pBt->pageSize + k*nOld;`
+  - `apCell = sqlite3ScratchMalloc( szScratch );`
+- Loop through all old pages and copy all cells (including divider cells with correct index) into `apCell` array
+  - Inside `for(i=0; i<nOld; i++){ ... }` loop
+    - `MemPage *pOld = apCopy[i] = (MemPage*)&aSpace1[pBt->pageSize + k*i];`
+    - Copy `apOld`'s content to `pOld`'s
 - Don't need to worry about the `if( i<nOld-1 && !leafData){ ... }` condition, as we only consider the `intKey` B-tree
-- All cells should be already stored in `CellArray b`
+- All cells should be already stored in `apCell`
 
 > TO BE CONTINUED...
