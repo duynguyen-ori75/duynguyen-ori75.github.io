@@ -3,7 +3,7 @@ layout: post
 title: SQLite balance siblings algorithm - 2nd part
 ---
 
-First post can be found here: [Balance sibling 1st part](2020-11-03-sqlite-balance-siblings-1.md)
+First post can be found here: [Balance sibling 1st part](2020/11/03/sqlite-balance-siblings-1.html)
 
 ## Balance siblings algorithm (cont.)
 
