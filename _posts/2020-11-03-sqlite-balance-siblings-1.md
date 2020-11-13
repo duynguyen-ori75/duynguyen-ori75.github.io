@@ -7,7 +7,7 @@ title: SQLite balance siblings algorithm - 1st part
 
 ### General information
 
-Short description: [Balance deeper algorithm](https://www.sqlite.org/btreemodule.html#balance_siblings)
+Short description: [Balance sibling algorithm](https://www.sqlite.org/btreemodule.html#balance_siblings)
 
 This function ensures that the current page and its siblings will be neither overflow nor underflow after its execution. The algorithm is quite complicated so there will be no visualization for it.
 
