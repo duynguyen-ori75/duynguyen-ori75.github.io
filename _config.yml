@@ -16,5 +16,7 @@ contact:
     icon: "fab fa-github-square"
     value: https://github.com/duynguyen-ori75
 
+resume_url: https://github.com/duynguyen-ori75/resume/raw/master/resume.pdf
+
 plugins:
   - jekyll-paginate
