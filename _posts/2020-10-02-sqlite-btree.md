@@ -1,6 +1,7 @@
 ---
 layout: post
 title: SQLite btree module
+tags: [sqlite, algorithm]
 ---
 
 ## SQLite architecture

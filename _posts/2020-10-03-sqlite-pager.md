@@ -1,6 +1,7 @@
 ---
 layout: post
 title: SQLite pager module
+tags: [sqlite]
 ---
 
 ## Problems when working with SQLite pager module

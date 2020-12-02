@@ -1,6 +1,7 @@
 ---
 layout: post
 title: SQLite Introduction to balance algorithms & balance quick algorithm
+tags: [sqlite, algorithm]
 ---
 
 ## Introduction

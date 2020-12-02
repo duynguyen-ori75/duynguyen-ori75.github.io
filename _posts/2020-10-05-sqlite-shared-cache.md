@@ -1,6 +1,7 @@
 ---
 layout: post
 title: SQLite shared-cache mode
+tags: [sqlite]
 ---
 
 SQLite Shared cache mode can be managed by using `SQLITE_OPEN_PRIVATECACHE` or `SQLITE_OPEN_SHAREDCACHE` flag when opening new SQLite connection.

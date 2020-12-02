@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Notes about compiling SQLite from source
+tags: [sqlite]
 ---
 
 All modification below is done on top of SQLite version 3.10.2

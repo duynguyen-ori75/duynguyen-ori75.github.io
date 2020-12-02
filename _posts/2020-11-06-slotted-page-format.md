@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Slotted page format
+tags: [algorithm]
 ---
 
 ## Introduction

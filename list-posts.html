@@ -4,8 +4,31 @@ layout: default
 
 <h1>List of posts</h1>
 
+{% assign SQLitePosts = site.posts | where_exp:"post","post.tags contains 'sqlite'" %}
+{% assign AlgoPosts = site.posts   | where_exp:"post","post.tags contains 'algorithm'" %}
+{% assign OtherPosts = site.posts  | where_exp:"post","post.tags contains 'other'" %}
+
+<h2>SQLite related posts</h2>
 <ul>
-{% for post in site.posts %}
+{% for post in SQLitePosts %}
+<li>
+  <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+</li>
+{% endfor %}
+</ul>
+
+<h2>Data structures & algorithms related posts</h2>
+<ul>
+{% for post in AlgoPosts %}
+<li>
+  <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+</li>
+{% endfor %}
+</ul>
+
+<h2>Other posts</h2>
+<ul>
+{% for post in OtherPosts %}
 <li>
   <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
 </li>

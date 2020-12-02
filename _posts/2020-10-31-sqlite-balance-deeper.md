@@ -1,6 +1,7 @@
 ---
 layout: post
 title: SQLite balance deeper algorithm
+tags: [sqlite, algorithm]
 ---
 
 ## Balance deeper algorithm

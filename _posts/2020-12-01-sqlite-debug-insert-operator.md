@@ -1,6 +1,7 @@
 ---
 layout: post
 title: SQLite debug insert operation
+tags: [sqlite]
 ---
 
 This is done with SQLite version 3.7.11

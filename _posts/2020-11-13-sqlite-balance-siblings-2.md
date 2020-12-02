@@ -1,6 +1,7 @@
 ---
 layout: post
 title: SQLite balance siblings algorithm - 2nd part
+tags: [sqlite, algorithm]
 ---
 
 First post can be found here: [Balance sibling 1st part](2020/11/03/sqlite-balance-siblings-1.html)

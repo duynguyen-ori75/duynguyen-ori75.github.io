@@ -1,6 +1,7 @@
 ---
 layout: post
 title: SQLite commit protocol
+tags: [sqlite]
 ---
 
 # Introduction
