@@ -3,9 +3,12 @@ layout: default
 ---
 
 <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
-{% if page.tags %}
-<i>Tags: {{ page.tags | join: ", " }}</i> </br>
-{% endif %}
-<i>Date: {{ page.date | date_to_long_string }}</i>
+
+<div class="post-metadata">
+  {% if page.tags %}
+    <i>Tags: {{ page.tags | join: ", " }}</i> </br>
+  {% endif %}
+  <i>Date: {{ page.date | date_to_long_string }}</i>
+</div>
 
 {{ content }}
