@@ -1,8 +1,8 @@
 theme: jekyll-theme-minimal
 title: Duy Nguyen's blog
-description: Funny stuffs - mostly about database systems and distributed computing
+description: Personal blog to discuss what I have done and learned through my research and study
 logo: /assets/logo.jpg
-paginate: 5
+paginate: 7
 paginate_path: "/page-:num/"
 
 contact:
